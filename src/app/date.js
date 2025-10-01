@@ -1,13 +1,19 @@
 "use client";
 
-const getCurrentDate = () => {
-  return new Date().toLocaleString("default", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-};
+import { useState, useEffect } from "react";
 
-const currentDate = getCurrentDate();
+export function useCurrentDate() {
+  const [currentDate, setCurrentDate] = useState("");
 
-export default currentDate;
+  useEffect(() => {
+    setCurrentDate(
+      new Date().toLocaleString("default", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    );
+  }, []);
+
+  return currentDate;
+}
