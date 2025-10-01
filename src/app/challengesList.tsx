@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import defaultChallenges from "./defaultchallenges";
 import ChallengeButton from "./challengeButton";
+import Link from "next/link";
 
 const resetAll = () => {
   localStorage.clear();
@@ -128,6 +129,22 @@ export default function ChallengesList() {
         aria-label="Reset all challenges"
       >
         <p className="text-center">Reset</p>
+      </button>
+      <button
+        className=" mt-3
+         border border-gray-300 rounded-lg
+               bg-[#3a3a3c] hover:bg-neutral-800
+              transition-colors duration-200 rounded-xl
+            "
+        aria-label="Link to donate page"
+      >
+        <Link
+          href="https://buymeacoffee.com/jackkershaw"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p className="text-center">Donate</p>
+        </Link>
       </button>
     </div>
   );
