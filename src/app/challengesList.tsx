@@ -14,7 +14,7 @@ const isValidUrl = (url: string) => {
     new URL(url);
     return true;
   } catch (error) {
-    return false;
+    return error;
   }
 };
 

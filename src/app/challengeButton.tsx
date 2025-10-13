@@ -14,6 +14,7 @@ const ChallengeButton = ({
 }) => {
   const currentDate = useCurrentDate();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleClick = (e: React.MouseEvent) => {
     localStorage.setItem(id, currentDate);
     window.location.reload();
